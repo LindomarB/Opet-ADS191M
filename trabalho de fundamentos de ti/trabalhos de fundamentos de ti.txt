@@ -1,0 +1,7 @@
+criar um site com tudo o que for aprendido em desenvolvimento responsivo web.
+e criar um site com o conteudo da materia de fundamento de ti com os trabalhos a pedido do professor marcos paes
+
+
+# exercicos (fundamentos de t.i)
+# conversoes de bases numericas (15 numeros de cada base decimal hexa e octal passado no dia 13/03/19) colocar as imagens e criar as imagen pra por no site como esta o exemplo no caderno 
+ 

@@ -1,0 +1,182 @@
+1) Porque é importante entender a História da Computação?
+para entender a evoluçao dos computadores assim como entender nosso relacionamento com os eles e o tipo de interaçao entre o homen e as tecnologias de uma determinado epoca
+
+2) Qual foi o primeiro instrumento de cálculo utilizado pelo homem?
+ o abaco era utilizado na babilonia po volta de 2400 a.C
+
+3) Qual é a origem da palavra “computador”?
+Computador vem do verbo latino putare: “contar, calcular, verificar, avaliar” e “pensar”. O computador tem como função acelerar processos que os seres humanos já realizam.
+
+O “com” de “computador” remete à preposição latina cum, indicando que o computador computa várias coisas “ao mesmo tempo”. Poderíamos dizer também que esta máquina computa com alguém, em companhia de alguém, com o seu próprio criador.
+
+Quem consultar o Novo Dicionário da Língua Portuguesa (3.ª edição), de Cândido de Figueiredo, verá que aí a acepção é formulada como se houvesse o pressuposto de que o termo se aplica a um ser humano, uma vez que recorre ao demonstrativo “aquele” e não “aquilo”: “Aquelle que faz cômputos, que calcula”. Hoje em dia adaptado para “Aquele ou aquilo que calcula baseado em valores digitais; calculador, calculista”.
+
+Portanto, é correto afirmar que a palavra computador já existia e encontrava-se dicionarizada muito antes dos computadores se tornarem populares, misturou-se, entretanto, ao significado do inglês computer, “máquina de calcular”, em meados de 1897.
+
+4) Descreva uma contribuição significativa, na área da computação, de cada uma das
+pessoas apresentadas a seguir: 
+	a) Blaise Pascal. 
+	///A primeira máquina de calcular moderna, a La pascaline, foi criada pelo matemático Pascal em 1642
+	b) Gottfried Wilhelm Leibnitz.
+	////em 1671, Leidniz criou um mecanismo chamado de roda graduada, capaz de realizar, além das duas operações básicas, multiplicações, divisões e o cálculo de raízes quadradas.
+	c) Charles Babbage. 
+	////A máquina analítica, também designado engenho analítico foi na história dos computadores um projecto de um computador mecânico moderno de uso geral, feito pelo professor de matemática britânico Charles Babbage
+	d) Ada Byron King. 
+	///foi a programadora do Engenho Analítico, e ficou conhecida como a primeira programadora da história.
+	e) Alan Turing. 
+	///foi um matemático, lógico, criptoanalista e cientista da computação britânico. Foi influente no desenvolvimento da ciência da computação e na formalização do conceito de algoritmo e computação com a máquina de Turing, desempenhando um papel importante na criação do computador moderno.[1][2][3] Foi também pioneiro na inteligência artificial e na ciência da computação.[4] É conhecido como o pai da computação.
+
+Durante a Segunda Guerra Mundial, Turing trabalhou para a inteligência britânica em Bletchley Park, num centro especializado em quebra de códigos. Por um tempo ele foi chefe do Hut 8, a seção responsável pela criptoanálise da frota naval alemã. Planejou uma série de técnicas para quebrar os códigos alemães, incluindo o método da bomba eletromecânica, uma máquina eletromecânica que poderia encontrar definições para a máquina Enigma.
+	f) Konrad Zuze.
+	///O primeiro computador eletromecânico foi construído por Konrad Zuse (1910–1995). Em 1936, esse engenheiro alemão construiu, a partir de relês que executavam os cálculos e dados lidos em fitas perfuradas, o Z1. Zuse tentou vender o computador ao governo alemão, que desprezou a oferta, já que não poderia auxiliar no esforço de guerra. Os projetos de Zuse ficariam parados durante a guerra, dando a chance aos americanos de desenvolver seus computadores. 
+	g) John von Neumann. 
+	///John von Neumann propôs a ideia que transformou os calculadores eletrônicos em “cérebros eletrônicos”: modelar a arquitetura do computador segundo o sistema nervoso central. Para isso, eles teriam que ter três características:
+
+Codificar as instruções de uma forma possível de ser armazenada na memória do computador. Von Neumann sugeriu que fossem usados uns e zeros.
+Armazenar as instruções na memória, bem como toda e qualquer informação necessária a execução da tarefa, e
+Quando processar o programa, buscar as instruções diretamente na memória, ao invés de lerem um novo cartão perfurado a cada passo.
+
+Visão simplificada da arquitetura de Von Neumann.
+Este é o conceito de programa armazenado, cujas principais vantagens são: rapidez, versatilidade e automodificação. Assim, o computador programável que conhecemos hoje, onde o programa e os dados estão armazenados na memória ficou conhecido como Arquitetura de von Neumann.
+	h) Herman Hollerith.
+	////inventou uma máquina capaz de processar dados baseada na separação de cartões perfurados (pelos seus furos). A máquina de Hollerith foi utilizada para auxiliar no censo de 1890, reduzindo o tempo de processamento de dados de sete anos, do censo anterior, para apenas dois anos e meio. Ela foi também pioneira ao utilizar a eletricidade na separação, contagem e tabulação dos cartões.
+
+A empresa fundada por Hollerith é hoje conhecida como International Business Machines, ou IBM.
+	i) Joseph Jacquard.
+	///inventa um tear mecânico, com uma leitora automática de cartões.A origem da ideia de programar uma máquina vem da necessidade de que as máquinas de tecer produzissem padrões de cores diferentes. Assim, no século XVIII foi criada uma forma de representar os padrões em cartões de papel perfurado, que eram tratados manualmente. 
+
+5) Qual a importância da máquina de Pascal para a história dos computadores? 
+Aos 19 anos ele inventou a primeira máquina de calcular. Chamado de máquina de aritmética, depois roda de pascalina e finalmente pascalina, ele construiu cerca de vinte cópias na década seguinte. dando inicip a criaçao de maquinas de calcular que se sequiram ao longo dos tempos 
+
+
+
+6) Qual foi a influência dos Bastões de Napier nas invenções que se seguiram?
+
+John Napier (1550-1617), escocês inventor dos logaritmos, também inventou os ossos de Napier, que eram tabelas de multiplicação gravadas em bastão, o que evitava a memorização da tabuada.
+
+7) Porque Charles Babagge é conhecido como o pai do computador?
+////Charles Babbage (1792-1871), um professor de matemática de Cambridge, a desenvolver uma máquina de “tecer números”, uma máquina de calcular onde a forma de calcular pudesse ser controlada por cartões.
+
+Tudo começou com a tentativa de desenvolver uma máquina capaz de calcular polinômios por meio de diferenças, o calculador diferencial. Enquanto projetava seu calculador diferencial, a ideia de Jacquard fez com que Babbage imaginasse uma nova e mais complexa máquina, o calculador analítico, máquina com alguns elementos que remetem aos computadores atuais.
+
+Sua parte principal seria um conjunto de rodas dentadas, o moinho, formando uma máquina de somar com precisão de cinquenta dígitos. As instruções seriam lidas de cartões perfurados. Os cartões seriam lidos em um dispositivo de entrada e armazenados, para futuras referências, em um banco de mil registradores. Cada um dos registradores seria capaz de armazenar um número de cinquenta dígitos, que poderiam ser colocados lá por meio de cartões a partir do resultado de um dos cálculos do moinho.
+
+Além disso tudo, Babbage imaginou a primeira máquina de impressão, que imprimiria os resultados dos cálculos, contidos nos registradores. Babbage conseguiu, durante algum tempo, fundos para sua pesquisa, porém não conseguiu completar sua máquina no tempo prometido e não recebeu mais dinheiro. Hoje, partes de sua máquina podem ser vistas no Museu Britânico, que também construiu uma versão completa, utilizando as técnicas disponíveis na época.
+
+Junto com Babbage, trabalhou a jovem Ada Augusta, filha do poeta Lord Byron, conhecida como Lady Lovelace e Ada Lovelace. Ada foi a primeira programadora da história, projetando e explicando, a pedido de Babbage, programas para a máquina inexistente. Ada inventou os conceitos de subrotina, uma seqüência de instruções que pode ser usada várias vezes; de loop, uma instrução que permite a repetição de uma sequência de instruções, e do salto condicional, instrução que permite saltar para algum trecho do programa caso uma condição seja satisfeita.
+
+Ada Lovelace e Charles Babbage estavam avançados demais para o seu tempo, tanto que até a década de 1940, nada se inventou parecido com seu computador analítico. Até essa época foram construídas muitas máquinas mecânicas de somar destinadas a controlar negócios (principalmente caixas registradoras) e algumas máquinas inspiradas na calculadora diferencial de Babbage, para realizar cálculos de engenharia (que não alcançaram grande sucesso).
+8) Explique resumidamente os elementos presentes na ordem cronológica abaixo:
+	a) Ábaco
+	////O ábaco é um antigo instrumento de cálculo, formado por uma moldura com bastões ou arames paralelos, dispostos no sentido vertical, correspondentes cada um a uma posição digital (unidades, dezenas,...) e nos quais estão os elementos de contagem (fichas, bolas, contas,...) que podem fazer-se deslizar livremente. Teve origem provavelmente na Mesopotâmia, há mais de 5.500 anos. O ábaco pode ser considerado como uma extensão do ato natural de se contar nos dedos. Emprega um processo de cálculo com sistema decimal, atribuindo a cada haste um múltiplo de dez. Ele é utilizado ainda hoje para ensinar às crianças as operações de somar e subtrair.
+	b) Eniac
+	///Electronic Numerical Integrator and Computer (ENIAC - em português: computador integrador numérico eletrônico) foi o primeiro computador digital eletrônico de grande escala. Muitos comentam que o primeiro foi o Mark I, mas este era apenas eletromecânico. O ENIAC entrou em funcionamento em fevereiro de 1946[1][2] pelas mãos dos cientistas norte-americanos John Eckert e John Mauchly, da Electronic Control Company
+	c) Transistor
+	///é um componente eletrônico que começou a popularizar-se na década de 1950, tendo sido o principal responsável pela revolução da eletrônica na década de 1960. São utilizados principalmente como amplificadores e interruptores de sinais elétricos, além de retificadores elétricos em um circuito, podendo ter variadas funções. O termo provém do inglês transfer resistor (resistor/resistência de transferência), como era conhecido pelos seus inventores.[1]
+
+O processo de transferência de resistência, no caso de um circuito analógico, significa que a impedância característica do componente varia para cima ou para baixo da polarização pré-estabelecida. Graças a esta função, a corrente elétrica que passa entre coletor e emissor do transistor varia dentro de determinados parâmetros pré-estabelecidos pelo projetista do circuito eletrônico. Esta variação é feita através da variação de corrente num dos terminais chamados base, o que, consequentemente, ocasiona o processo de amplificação de sinal.
+
+Entende-se por “amplificar” o procedimento de tornar um sinal elétrico mais forte. Um sinal elétrico de baixa intensidade, como os sinais gerados por um microfone, é injetado num circuito eletrônico (transistorizado por exemplo), cuja função principal é transformar este sinal fraco gerado pelo microfone em sinais elétricos com as mesmas características, mas com potência suficiente para excitar os alto-falantes. A este processo todo dá-se o nome de ganho de sinal.
+	d) Chip 
+	///é um circuito eletrônico miniaturizado (composto principalmente por dispositivos semicondutores) sobre um substrato fino de material semicondutor.
+	e) Microprocessador 
+	///O microprocessador, geralmente chamado apenas de processador, é um circuito integrado que realiza as funções de cálculo e tomada de decisão de um computador. Todos os computadores e equipamentos eletrônicos baseiam-se nele para executar suas funções, podemos dizer que o processador é o cérebro do computador por realizar todas estas funções.
+
+Um microprocessador incorpora as funções de uma unidade central de computação (UCP) em um único circuito integrado, ou no máximo alguns circuitos integrados. É um dispositivo multifuncional programável que aceita dados digitais como entrada, processa de acordo com as instruções armazenadas em sua memória, e fornece resultados como saída. Microprocessadores operam com números e símbolos representados no sistema binário.
+o microprocessador é um circuito integrado formado por uma camada chamada de mesa epitaxial de silício, trabalhada de modo a formar um cristal de extrema pureza, laminada até uma espessura mínima com grande precisão, depois cuidadosamente mascarada por um processo fotográfico e dopada pela exposição a altas temperaturas em fornos que contêm misturas gasosas de impurezas. Este processo é repetido tantas vezes quanto necessário à formação da microarquitetura do componente.
+
+9)Na história dos computadores, quais inventos você achou mais significativos (explique)?
+////evolução dos condutores e o posterior desenvolvimento dos circuitos integrados. Isso possibilitou cada vez mais a miniaturização dos
+sitemas até os dias de hoje, em que podemos ver equipamentos pequenos com grandes capacidades de processamento.
+
+
+
+
+10)Cite alguns problemas que o uso de válvulas provocava nos computadores de 1ª geração.
+	//// Uso restrito. Precisava ser reprogramado a cada tarefa. Grande consumo de energia. Problemas devido à muito aquecimento. As válvulas foram utilizadas em computadores eletrônicos. Normalmente quebrava após algumas horas de uso e tinha o processamento bastante lento.
+11)O que diferencia os computadores de 1ª geração dos da 2ª?
+	////  os computadores da 1ª geração eram lentos, enormes, ocupavam salas inteiras e tinhammuitos metros de fios.Os de 2ª geração houve a substituição das válvulas eletrônicas por transistores e os fiosde ligação por circuitos impressos que tornou os computadores mais rápidos, menores ede custo mais baixo, mesmo esquentando muito.
+12)O que contribui para que os computadores, na sua evolução, sejam significativamente menores que seus antecessores?
+/// COm a evoluçao os computadores passaram de mecanicos a eletronicos e assim tornamdo- se menores e mais acessiveis economicamente
+
+	
+13)Explique sucintamente o funcionamento da Máquina de Turing
+	///Funcionamento
+
+A Máquina de Turing deve assumir sempre em um estado, pertencente à um conjunto finito de estados;
+O processamento de uma Máquina de Turing começa sempre em um estado especial, chamado estado inicial;
+Inicialmente a primeira célula da fita é preenchida com “<”, que indica o início da mesma;
+A cabeça de leitura é posicionada inicialmente na segunda célula da fita, a célula seguinte a “<”;
+As células em branco, que não fazem parte da palavra a ser processada, são preenchidas com o símbolo “ß”;
+O processamento em uma MT consiste em uma sequência de passos que consistem em:
+
+Observar o símbolo corrente da fita (aquele em que o cabeçote está posicionado);
+Escrever um símbolo nesta célula da fita;
+Mover o cabeçote para a esquerda ou direita;
+Mudar o estado corrente;
+A ação exata a ser executada é determinada por um programa (função de transição) que comunica à unidade de controle o que deve ser feito com base na configuração (estado + símbolo corrente da fita) em que a Máquina de Turing se encontra.
+O processamento termina quando a máquina atinge uma configuração para a qual não existe função prevista, neste caso:
+
+Se a máquina estiver com um estado final ativo, a palavra de entrada é aceita;
+Se o estado ativo não for final, a palavra de entrada não é aceita;
+Se a máquina não parar (looping), a entrada de entrada não é aceita.
+A Máquina de Turing pode ser empregada como modelo de natureza reconhecedora ou transdutora:
+
+Reconhecedora: processa a palavra de entrada aceitando-a ou rejeitando-a. Neste caso, o conjunto de palavras aceitas corresponde à linguagem descrita pela MT;
+Transdutora: máquina para computar uma função. Aplica uma função sobre o conteúdo inicial da fita e o resultado produzido é lançado na própria fita.
+14)Que problema existente na época foi resolvido pela Arquitetura de Von Neumann?
+	/// A Arquitetura de von Neumann (de John von Neumann, pronunciado Nóimánn) é uma arquitetura de computador que se caracteriza pela possibilidade de uma máquina digital armazenar seus programas no mesmo espaço de memória que os dados, podendo assim manipular tais programas. Esta arquitetura é um projeto modelo de um computador digital de programa armazenado que utiliza uma unidade de processamento (CPU) e uma de armazenamento ("memória") para comportar, respectivamente, instruções e dados.
+
+A máquina proposta por Von Neumann reúne os seguintes componentes:
+
+Uma memória
+Uma unidade aritmética e lógica (ALU)
+Uma unidade central de processamento (CPU), composta por diversos registradores, e
+Uma Unidade de Controle (CU), cuja função é a mesma da tabela de controle da Máquina de Turing universal: buscar um programa na memória, instrução por instrução, e executá-lo sobre os dados de entrada.
+
+15)Qual foi a primeira linguagem de programação? Em que ano foi desenvolvida?	
+	//// A primeira linguagem de programação de alto nível amplamente usada foi Fortran, criada em 1954.
+16)Qual é a origem da expressão “bugs” utilizada quando um programa tem algum defeito?
+///Os primeiros computadores eram grandes e utilizavam válvulas. 
+
+Como consequência, as salas nas quais ficavam em funcionamento os tais "monstros" (em comparação aos micros de hoje) eram abrigos perfeitos para insetos ("bugs" em inglês), causando grandes problemas. 
+
+Os bichinhos pousavam em alguma válvula ou chave, e morriam. 
+
+Iam se acumulando até que as coitadas das máquinas paravam de funcionar - pois não tinham a mesma tecnologia de hoje. 
+
+Quando descobriram a causa das máquinas pararem, ou seja, os insetinhos, acostumaram a chamar qualquer problema de BUG, originando assim a tão conhecida expressão.
+17)O que é um supercomputador?
+	///computador de grande potência e velocidade, usado . especialmente. para pesquisas científicas, simulações e cálculos numéricos.
+18) O que são mainframes e quem utiliza? 
+	////Um mainframe é um computador de grande porte, dedicado normalmente ao processamento de um volume grande de informações. Os mainframes são capazes de oferecer serviços de processamento a milhares de usuários através de milhares de terminais conectados diretamente ou através de uma rede. (O termo mainframe se refere ao gabinete principal que alojava a unidade central de fogo nos primeiros computadores.
+Embora venham perdendo espaço para os servidores de arquitetura PC e servidores Unix, de custo bem menor, ainda são muito usados em ambientes comerciais e grandes empresas (bancos, empresas de aviação, universidades, etc.).
+19)O que são Servidores?
+ /////Em informática, um servidor é um software ou computador, com sistema de computação centralizada que fornece serviços a uma rede de computadores, chamada de cliente.
+
+Esses serviços podem ser de naturezas distintas, como por exemplo, arquivos e correio eletrônico.
+20) Na história dos computadores, quais inventos você achou mais significativos? Por quê? 
+////evolução dos condutores e o posterior desenvolvimento dos circuitos integrados. Isso possibilitou cada vez mais a miniaturização dos
+sitemas até os dias de hoje, em que podemos ver equipamentos pequenos com grandes capacidades de processamento.
+
+21) Justifique a afirmação:
+“A etapa principal no desenvolvimento de uma ciência é a construção de teorias, a serem confirmadas ou rejeitadas pela experimentação. No caso, vimos que a ciência progrediu a partir de teorias originadas muito antes que a tecnologia pudesse produzir as máquinas preconizadas pelos antigos pesquisadores.” 
+ nao criamos nada do eter tudo sempre foi idealizado ou imaginado por alguem de alguma forma. leve em consideraçao os filmes de ficçao cientifica as coisas apesar de serem  so fantasia tem suas certas familiaridades com as coisas a quais nos sao comum.
+
+22) Leia o texto abaixo e analise a questão a seguir:
+“À medida que a tecnologia avança, nosso sistema educacional vai sendo constantemente desafiado a reconsiderar o nível de abstração em que são apresentados os diversos assuntos estudados. Questiona-se muitas vezes se uma certa habilidade do aluno continua sendo necessária, ou se deveria ser permitido aos estudantes apoiarem-se em uma ferramenta abstrata. Não se ensina mais os estudantes de trigonometria a encontrar os valores das funções trigonométricas com o uso de tabelas. Em vez disso, eles empregam calculadores eletrônicas como ferramentas abstratas.”
+Que outros assuntos apresentam controvérsias semelhantes? Algum dia, o uso de vídeo eliminará a necessidade de leitura? Verificadores automáticos de ortografia eliminarão a necessidade de habilidades ortográficas?
+Descreva sobre o que a evelução dos computadores mudou nas atividades das pessoas, e quais projeções você acredita que faram parte do futuro das pessoas.
+		//// a maneira de se comunicar se expressar e criar coisas foi e que mais rebeu influencia do boom da evolução dos computadores. a maneira como nos comunicamos e nos localizamos. 
+acredito que a proxima evoluçao neste sentido seja no ramo da biomedicina e neurociencia. junto com a tecnoligia dos computadores quânticos e nanotecnologias.  
+
+23) Leia o texto abaixo e analise a questão a seguir: 
+“É em geral aceita a premissa de que a nossa sociedade é diferente do que teria sido se a revolução da computação não tivesse ocorrido.”
+Na sua opinião, nossa sociedade é melhor do que teria sido sem essa revolução? //// sem duvida. com a evoluçao dos computadores fomos capazes de feitos incriveis, do aprendizado remoto, de comunicaçao em tempo real, transmisao de video e audio dados,o compartilahmento de informaçoes e n possibilidades com a rede de computadores. fora a facilidades de usos de varios softwares paras as areas tanto de lazer, emtreterimento e negocios. 
+
+24) Calcular! Sobre efeturar calculos numéricos e as ferramentas utilizadas para tanto, marque a alternativa correta considerando a ordem cronológica:
+a) Ábaco, Eniac, Chip, Transistor e Microprocessador
+b) Eniac, Ábaco, Chip, Transistor e Microprocessador
+c) Ábaco, Eniac, Chip, Microprocessador e Transistor
+///////d) Ábaco, Eniac, Transistor, Chip e Microprocessador
+e) Nenhuma das Alternativas.
