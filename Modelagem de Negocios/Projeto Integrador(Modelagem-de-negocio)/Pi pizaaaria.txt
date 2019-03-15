@@ -1,0 +1,37 @@
+﻿                                            PI - Pizzaria delivery
+
+                                           O que deve ter no sistema
+ -Listar sistemas parecidos!
+ -Cadastro de clientes
+ -Controle de pedidos
+ -Controle de estoque (Valores)
+ -Controle de gastos
+ -Gps (motoboy)
+
+					 Pontos de vista dos interessados
+
+Cliete: Os clientes desejariam saber dos produtos, atendimento online e presencial (velocidade), saber origem 
+dos produtos, saber onde esta seu pedido via rastreamento ao vivo, metodos de pagamento, lugares onde a empresa
+atua.
+
+Dono: O dono já iria querer um sistema de cadastro dos funcionarios, onde saberia a produtividade, valor dos salarios,
+lucros, gastos, quantidade de pizza vendidas por mes, qual a mais pedida (o mesmo para bebidas), sistema de 
+controle de estoque para encomendar os insumos.
+
+Funcionarios: Os funcionarios em geral desejariam um sistema onde saberia a data de recebimento do salario
+e seu valor. Ja o caixa, saber os cadastros de clientes, metodos de pagamento, quais pizzas serao feitas.
+
+Motoboy: O motoboy desejaria um sistema de gps, onde todos os locais de entrega seriam colocados e assim cauculando 
+a rota mais rapida e economica para suas entregas, saber o exato valor que deveria levar de troco e maquininhas
+de cartoes, saber o nome dos clientes para proporcionar um melhor atendimento.
+
+Marketing: Intereçados nas questoes de visibilidade do site e do programa para os clientes, assim podendo aumentar
+o alcance do publico.
+
+						Busca por colaboração
+
+Requisitos em comum: 
+
+Requisitos em conflito:
+
+ 
