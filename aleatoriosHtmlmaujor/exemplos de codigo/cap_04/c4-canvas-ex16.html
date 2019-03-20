@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<style>
+canvas {
+	border:1px solid #ccc;
+	}
+</style>
+<!--[if IE]><script src="../scripts/excanvas.js"></script><![endif]-->
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script>
+window.onload = function() {
+var canvas = document.getElementById('quadro');
+var ctx = canvas.getContext('2d'); 
+	var formulario = document.getElementById('formulario');
+	var valor = document.getElementById('valor');
+	var limpar = document.getElementById('limpar');
+	var selecao = document.getElementById('va');
+
+
+function pattern() {	
+	var imagem = new Image();
+	imagem.src = 'flor.png';
+	imagem.onload = function() {	
+	var pattern = ctx.createPattern(imagem, selecao.value )
+	
+	ctx.fillStyle = pattern;
+	ctx.fillRect(0,0,400,400);
+
+	}
+	formulario.style.display = 'none';
+	limpar.style.display = 'block';
+	
+	var texto = document.createTextNode('Você escolheu o valor: ' + selecao.value);
+	valor.appendChild(texto);
+}	
+	function limparCanvas() {
+	window.location.href=window.location.href;
+	}	
+	selecao.onchange = pattern;
+	limpar.onclick = limparCanvas;
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 4</h1>
+	<h2>Canvas - Exemplo 16: pattern.</h2>
+		<p>Nota: Em dezembro de 2010 somente a engine WebKit suporta os quatro valores.<br>O Firefox suporta somente repeat e no-repeat.</p>
+</header>
+<section>
+	<canvas id="quadro" width="400" height="200">
+		<p>Conteúdo alternativo para navegadores que não suportam canvas.</p>
+	</canvas>
+<p id="valor" class="dest"></p>
+<p id="limpar" style="display:none;"><button type="button">Limpar canvas</button></p>
+<form action="" method="get" id="formulario">
+<p><label for="va">Valor do atributo repetição:</label>
+<select name="va" id="va">
+<option value="">escolha</option>
+<option value="repeat">repeat</option>
+<option value="no-repeat">no-repeat</option>
+<option value="repeat-x">repeat-x</option>
+<option value="repeat-y">repeat-y</option>
+</select></p>
+</form>
+</section>
+<section>
+	<h3>JavaScript</h3>
+		<pre class="brush: javascript">
+&lt;script>
+window.onload = function() {
+var canvas = document.getElementById('quadro');
+var ctx = canvas.getContext('2d'); 
+	var imagem = new Image();
+	imagem.src = 'flor.png';
+imagem.onload = function() {	
+	var pattern = ctx.createPattern(imagem, escolha )
+	
+	ctx.fillStyle = pattern;
+	ctx.fillRect(0,0,400,200);
+}
+&lt;/script>
+</pre>
+</section>
+<section>
+	<h3>CSS</h3>
+		<pre class="brush:css">
+	canvas {border:1px solid #ccc;}
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+	&lt;canvas id="quadro" width="400" height="200">
+		&lt;p>Conteúdo alternativo para navegadores que não suportam canvas.&lt;/p>
+	&lt;/canvas>
+</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c4-canvas-ex15.html">&laquo; anterior</a> | <a href="c4-canvas-ex17.html">próximo &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

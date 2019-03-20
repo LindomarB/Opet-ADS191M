@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script src="cokieutil.js"></script>
+<script>
+function salvarCookie(name) {
+	var valor = document.forms['cookieform'].cookievalue.value;
+	var itemStorage = sessionStorage.setItem('dataStorage', valor);
+	var valorItemStorage = sessionStorage.getItem('dataStorage');
+	if (!valor)
+		alert('Entre um valor para o cookie e dado.');
+	else {
+		CookieUtil.set(name,valor);
+		var mensagem = 'Um cookie denominado "meuCookie" com o valor '+valor+'\n';
+		mensagem += 'e um dado com o nome "dataStorage" com o valor '+valorItemStorage +'\n';
+		mensagem += 'foram criados'
+		alert(mensagem);
+	}
+}
+function lerCookie(name) {
+	var valorItemStorage = sessionStorage.getItem('dataStorage');
+	var mensagem = 'Um cookie denominado "meuCookie" com o valor '+CookieUtil.get(name)+'\n';
+	mensagem += 'e um dado com o nome "dataStorage" com o valor '+valorItemStorage +'\n';
+	mensagem += 'foram lidos'
+	alert(mensagem);
+}
+function apagarCookie(name) {
+	CookieUtil.unset(name);
+	sessionStorage.removeItem('dataStorage');
+	alert('Cookie com o nome "meuCookie" e dado com o nome "dataStorage" foram apagados');
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 8</h1>
+	<h2>Cookies x sessionStorage</h2>
+</header>
+<section>
+<form name="cookieform" action="#"><p>
+<label>Escolha um valor para o cookie de nome "meuCookie".<br>O mesmo valor será usado para o dado de nome "dataStorage":</label><br> <input name="cookievalue">
+</p>
+</form>
+<p><a href="#" onClick="salvarCookie('meuCookie')">Armazenar cookie e dado</a></p>
+<p><a href="#" onClick="lerCookie('meuCookie')">Ler cookie e dado</a></p>
+<p><a href="#" onClick="apagarCookie('meuCookie')">Apagar cookie e dado</a></p>
+<p><span class="dest">Instruções:</span> Crie um cookie e dado nesta página;<br>Leia o cookie e dado criados;<br>Abra uma nova janela ou aba no navegador e cole o endereço desta página;<br>Carregue a página e leia o cookie e dado.<br>
+Compare a leitura com a leitura na página anterior;<br>Tire suas conclusões.</p>
+
+</section>
+<section>
+	<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script src="cokieutil.js">&lt;/script> // Objeto CookieUtil
+&lt;script>
+function salvarCookie(name) {
+	var valor = document.forms['cookieform'].cookievalue.value;
+	var itemStorage = sessionStorage.setItem('dataStorage', valor);
+	var valorItemStorage = sessionStorage.getItem('dataStorage');
+	if (!valor)
+		alert('Entre um valor para o cookie e dado.');
+	else {
+		CookieUtil.set(name,valor);
+		var mensagem = 'Um cookie denominado "meuCookie" com o valor '+valor+'\n';
+		mensagem += 'e um dado com o nome "dataStorage" com o valor '+valorItemStorage+'\n';
+		mensagem += 'foram criados'
+		alert(mensagem);
+	}
+}
+function lerCookie(name) {
+	var valorItemStorage = sessionStorage.getItem('dataStorage');
+	var mensagem = 'Um cookie denominado "meuCookie" com o valor '+CookieUtil.get(name)+'\n';
+	mensagem += 'e um dado com o nome "dataStorage" com o valor '+valorItemStorage+'\n';
+	mensagem += 'foram lidos'
+	alert(mensagem);
+}
+function apagarCookie(name) {
+	CookieUtil.unset(name);
+	sessionStorage.removeItem('dataStorage');
+	alert('Cookie com o nome "meuCookie" e dado com o nome "dataStorage" foram apagados');
+}
+&lt;/script>
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+&lt;section>	
+&lt;form name="cookieform" action="#">&lt;p>
+&lt;label>Escolha um valor para o cookie de nome "meuCookie".&lt;br>O mesmo valor será usado para o dado de nome "dataStorage":&lt;/label>&lt;br> &lt;input name="cookievalue">
+&lt;/p>
+&lt;/form>
+&lt;p>&lt;a href="#" onclick="salvarCookie('meuCookie')">Armazenar cookie e dado&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#" onclick="lerCookie('meuCookie')">Ler cookie e dado&lt;/a>&lt;/p>
+&lt;p>&lt;a href="#" onclick="apagarCookie('meuCookie')">Apagar cookie e dado&lt;/a>&lt;/p>
+&lt;/section>
+</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="../cap_07/c7-mapa-dinamico-google.html">&laquo; cap7</a> | <a href="c8-localstorage.html">próxima &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

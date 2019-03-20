@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<style>
+p#msg {
+	border:1px solid #ccc;
+	padding:5px 10px;
+	width:420px;
+	display:none;
+	}
+</style>
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script>
+function init() {
+if (!Modernizr.webworkers) {alert('Lamento, seu navegador não suporta Web Workers')}	
+	var campoMensagem,btnLimpar,btnIniciarWorker,campoResultado;
+	campoMensagem = document.getElementsByTagName('input')[0]; 
+	btnLimpar = document.getElementsByTagName('button')[0]; 
+	btnIniciarWorker = document.getElementsByTagName('button')[1]; 
+	campoResultado = document.getElementById('msg'); 
+function comunicarWorker() {
+	if(campoMensagem.value == '') {
+	alert('Digite sua mensagem para o Worker'); 
+	return;
+	}
+	campoResultado.style.display = 'block';
+	var textoMensagem = campoMensagem.value;
+	var worker = new Worker('exemplo3.js');
+	
+	worker.onerror = function (e) {
+		linhaErro = e.lineno;
+		msgErro = e.message;
+		arquivoErro = e.filename;
+			erro = 'Ops! Ocorreu o seguinte erro:<br>';
+			erro += 'Linha: '+ linhaErro + '<br>'; 
+			erro += 'Erro: '+ msgErro + '<br>';
+			erro += 'Arquivo: '+ arquivoErro;
+				campoResultado.innerHTML = erro;
+	  };
+	worker.postMessage(textoMensagem);	
+		worker.onmessage = function (e) {
+			campoResultado.innerHTML = e.data;
+		};
+};
+if(window.addEventListener) {
+btnIniciarWorker.addEventListener('click', comunicarWorker, false);
+	btnLimpar.addEventListener('click', function() {
+		campoMensagem.value = '';
+		campoResultado.style.display = 'none';
+	}, false);
+} else {
+	btnLimpar.attachEvent('onclick', function() {
+		campoMensagem.value = '';
+		campoResultado.style.display = 'none';
+	});
+btnIniciarWorker.attachEvent('onclick', comunicarWorker);
+};
+}
+window.onload = init;
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 9</h1>
+	<h2>Web Workers - Exemplo 3</h2>
+</header>
+<section>
+<h3>Comunicação da página com o Worker e vice-versa<br>
+<small>Mostra o uso do evento error. O script do worker contém erro</small></h3>
+<p><label>Entre uma mensagem:<br><input type=text></label> 
+<button type=button>Limpar</button></p>
+<p><button type=button>Iniciar Worker</button>
+<p id="msg"></p>
+</section>
+<section>
+	<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script>
+function init() {
+if (!Modernizr.webworkers) {alert('Lamento, seu navegador não suporta Web Workers')}	
+	var campoMensagem,btnLimpar,btnIniciarWorker,campoResultado;
+	campoMensagem = document.getElementsByTagName('input')[0]; 
+	btnLimpar = document.getElementsByTagName('button')[0]; 
+	btnIniciarWorker = document.getElementsByTagName('button')[1]; 
+	campoResultado = document.getElementById('msg'); 
+function comunicarWorker() {
+	if(campoMensagem.value == '') {
+	alert('Digite sua mensagem para o Worker'); 
+	return;
+	}
+	campoResultado.style.display = 'block';
+	var textoMensagem = campoMensagem.value;
+		var worker = new Worker('exemplo3.js');
+	
+	worker.onerror = function (e) {
+		linhaErro = e.lineno;
+		msgErro = e.message;
+		arquivoErro = e.filename;
+			erro = 'Ops! Ocorreu o seguinte erro:<br>';
+			erro += 'Linha: '+ linhaErro + '<br>'; 
+			erro += 'Erro: '+ msgErro + '<br>';
+			erro += 'Arquivo: '+ arquivoErro;
+				campoResultado.innerHTML = erro;
+	  };
+	worker.postMessage(textoMensagem);	
+		worker.onmessage = function (e) {
+			campoResultado.innerHTML = e.data;
+		};
+};
+if(window.addEventListener) {
+btnIniciarWorker.addEventListener('click', comunicarWorker, false);
+	btnLimpar.addEventListener('click', function() {
+		campoMensagem.value = '';
+		campoResultado.style.display = 'none';
+	}, false);
+} else {
+	btnLimpar.attachEvent('onclick', function() {
+		campoMensagem.value = '';
+		campoResultado.style.display = 'none';
+	});
+btnIniciarWorker.attachEvent('onclick', comunicarWorker);
+};
+}
+window.onload = init;
+&lt;/script>
+// xxxxxxxxxxxxx Tarefa do Worker - arquivo exemplo3.js xxxxxxxxxxxxx
+onmessage = function(e) {
+	var mensagemRecebida = e.data;
+	var mensagemRetornada = 'O Worker acusa o recebimento da seguinte mensagem:&lt;br>&lt;span class="dest">'+ mensagemRecebida +'&lt;/span>';
+	postMessage(MensagemRetornada); // Aqui há um erro - mensagemRetornada e não MensagemRetornada
+}
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+<pre class="brush: html">
+&lt;section>	
+&lt;h3>Comunicação da página com o Worker e vice-versa&lt;/h3>
+	&lt;p>&lt;label>Entre uma mensagem:&lt;br>&lt;input type=text>&lt;/label> 
+	&lt;button type=button>Limpar&lt;/button>&lt;/p>
+	&lt;p>&lt;button type=button>Iniciar Worker&lt;/button>
+	&lt;p id="msg">&lt;/p>
+&lt;/section>
+</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c9-webworkers-ex2.html">&laquo; anterior</a> | <a href="../cap_10/index.html">cap10 &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

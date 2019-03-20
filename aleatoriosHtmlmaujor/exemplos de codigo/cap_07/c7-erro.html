@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script>
+function inspecionarErro() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(sucesso,erro);
+	} else {
+		alert("Este navegador não suporta a funcionalidade Geolocation");
+	}
+}
+function erro(err) {
+	switch (err.code) {
+		case 1 : 
+			var mensagemErro = "A permissão para obter a sua posição foi negada.";
+		break;
+		case 2 : 
+			var mensagemErro = "Não foi possível estabelecer uma conexão para obter a sua posição.";
+		break;
+		case 3 : 
+			var mensagemErro = "Tempo esgotado.";
+		break;
+		default:
+			var mensagemErro = "Não foi possível obter sua posição.";
+		}
+	var codigoErro = err.code;
+	var mensagem = "Ocoreu um erro na determinação da posição: <br>";
+	mensagem += "Código do erro: " + codigoErro + "<br>";
+	mensagem += "Mensagem: " + mensagemErro;
+	document.getElementById('msg').innerHTML = mensagem;
+}
+function sucesso(position) {
+	document.getElementById('msg').innerHTML = "Provoque um erro, negando a permissão para compartilhar sua posição.";
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 7</h1>
+	<h2>Callback erro para o método getCurrentPosition()</h2>
+</header>
+<section>
+	<p><input type=button value="Clique para inspecionar erro" onClick="inspecionarErro()"></p>
+	<p id="msg" class="dest"></p>
+</section>
+<section>
+	<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script>
+function inspecionarErro() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(sucesso,erro);
+	} else {
+		alert("Este navegador não suporta a funcionalidade Geolocation");
+	}
+}
+function erro(err) {
+	switch (err.code) {
+		case 1 : 
+			var mensagemErro = "A permissão para obter a sua posição foi negada.";
+		break;
+		case 2 : 
+			var mensagemErro = "Não foi possível estabelecer uma conexão para obter a sua posição.";
+		break;
+		case 3 : 
+			var mensagemErro = "Tempo esgotado.";
+		break;
+		case 0 : 
+			var mmensagemErro = "Ocorreu um erro na obtenção da sua posição.";
+		default:
+			var mensagemErro = "Não foi possível obter sua posição.";
+		}
+	var codigoErro = err.code;
+	var mensagem = "Ocoreu um erro na determinação da posição: <br>";
+	mensagem += "Código do erro: " + codigoErro + "<br>";
+	mensagem += "Mensagem: " + mensagemErro;
+	document.getElementById('msg').innerHTML = mensagem;
+}
+function sucesso(position) {
+	document.getElementById('msg').innerHTML = "Provoque um erro, negando a permissão pra compartilhar sua posição";
+}
+&lt;/script>
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+	&lt;p>&lt;input type=button value="Clique para inspecionar erro" onclick="inspecionarErro()"">&lt;/p>
+</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c7-propriedades-posicao.html">&laquo; anterior</a> | <a href="c7-mapa-estatico-google.html">próxima &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<style>
+#fundo-controles {
+	width:163px; 
+	height:43px;
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	background:url(fundo-controles.png) no-repeat;
+	}
+</style>
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script>
+function id(id) {
+	return document.getElementById(id)
+}
+function init() {	 
+	var video = id('video');
+	var valor = id('valor');
+	var btn = id('btn');
+	var endereco = video.currentSrc;
+	
+btn.onclick = function(){
+	var texto = 'Endereço do arquivo de mídia: ' + endereco;
+	valor.innerHTML = (texto);
+}
+}
+window.onload = init;
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 3</h1>
+	<h2>Vídeo - Exemplo 9</h2>
+</header>
+<section>
+	<video poster="capa.jpg" controls id="video">
+		<source src="video.ogv" type="video/ogg">
+		<source src="video.mp4" type="video/mp4">
+		<source src="video.webm" type="video/webm">
+		<!-- Código (X)HTML para inserção de video com Flash -->
+		<p>Seu navegador não suporta o elemento video da HTML5.<br>Faça <a href="video.mp4">download do video</a></p>
+	</video>
+<p id="valor" class="dest"></p>
+<button type="button" id="btn">Inspecionar atributo src</button>
+</section>
+<section>
+	<h3>JavaScript</h3>
+		<pre class="brush: javascript">
+&lt;script type="text/javascript">
+function id(id) {
+	return document.getElementById(id)
+}
+function init() {	 
+	var video = id('video');
+	var valor = id('valor');
+	var btn = id('btn');
+	var endereco = video.currentSrc;
+	
+btn.onclick = function(){
+	var texto = 'Endereço do arquivo de mídia: ' + endereco;
+	valor.innerHTML = (texto);
+}
+}
+window.onload = init;
+&lt;/script >		
+		</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+	&lt;video poster="capa.jpg" controls id="video">
+		&lt;source src="video.ogv" type="video/ogg">
+		&lt;source src="video.mp4" type="video/mp4">
+		&lt;source src="video.webm" type="video/webm">
+		&lt;!-- Código (X)HTML para inserção de video com Flash -->
+		&lt;p>Seu navegador não suporta o elemento video da HTML5.&lt;br>Faça &lt;a href="video.mp4">download do video&lt;/a>&lt;/p>
+	&lt;/video>		
+	</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c3-video-ex8.html">&laquo; anterior</a> | <a href="c3-video-ex10.html">próximo &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

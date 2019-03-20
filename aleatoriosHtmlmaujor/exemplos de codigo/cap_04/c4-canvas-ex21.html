@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<style>
+canvas {
+	border:1px solid #ccc;
+	}
+</style>
+<!--[if IE]><script src="../scripts/excanvas.js"></script><![endif]-->
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script>
+window.onload = function() {
+var canvas = document.getElementById('quadro');
+var ctx = canvas.getContext('2d'); 
+	ctx.fillStyle = '#ddd';
+    ctx.fillRect(70,70,260,60);
+
+function transformar() {
+	
+	var angulo = selecao.value*Math.PI/180; //transforma graus em radianos
+	
+	ctx.rotate(angulo);
+	
+	ctx.fillStyle = 'rgba(0,100,0,0.5)';
+    ctx.fillRect(70,70,260,60);
+
+	formulario.style.display = 'none';
+	limpar.style.display = 'block';
+	
+		var texto = document.createTextNode('Você escolheu uma rotação de '+radianos+' graus');
+		valor.appendChild(texto);
+}
+function limparCanvas() {
+window.location.href=window.location.href;
+}	
+var formulario = document.getElementById('formulario');
+var valor = document.getElementById('valor');
+var limpar = document.getElementById('limpar');
+var selecao = document.getElementById('va');
+selecao.onchange = transformar;
+limpar.onclick = limparCanvas;
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 4</h1>
+	<h2>Canvas - Exemplo 21: transformações (rotate).</h2>
+		<p>O quadrado cinza será rotacionado conforme sua escolha.</p>
+</header>
+<section>
+	<canvas id="quadro" width="400" height="200">
+		<p>Conteúdo alternativo para navegadores que não suportam canvas.</p>
+	</canvas>
+<p id="valor" class="dest"></p>
+<p id="limpar" style="display:none;"><button type="button">Limpar canvas</button></p>
+<form action="" method="get" id="formulario">
+<p><label for="va">Ângulo de rotação</label>:
+<select name="va" id="va">
+<option value="">escolha</option>
+<option value="5">5graus</option>
+<option value="10">10graus</option>
+<option value="30">30graus</option>
+<option value="45">45graus</option>
+<option value="-5">-5graus</option>
+<option value="-10">-10graus</option>
+<option value="-30">-30graus</option>
+<option value="-45">-45graus</option>
+</select></p>
+</form>
+</section>
+<section>
+	<h3>JavaScript</h3>
+		<pre class="brush: javascript">
+&lt;script>
+var canvas = document.getElementById('quadro');
+var ctx = canvas.getContext('2d'); 
+	ctx.fillStyle = '#ddd';
+    ctx.fillRect(70,70,260,60); // retângulo referência
+	
+	var angulo = escolha;
+	
+	ctx.rotate(angulo);
+	ctx.fillStyle = 'rgba(0,100,0,0.5)';
+    ctx.fillRect(70,70,260,60);
+&lt;/script>
+</pre>
+</section>
+<section>
+	<h3>CSS</h3>
+		<pre class="brush:css">
+	canvas {border:1px solid #ccc;}
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+	&lt;canvas id="quadro" width="400" height="200">
+		&lt;p>Conteúdo alternativo para navegadores que não suportam canvas.&lt;/p>
+	&lt;/canvas>
+</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c4-canvas-ex20.html">&laquo; anterior</a> | <a href="c4-canvas-ex22.html">próximo &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

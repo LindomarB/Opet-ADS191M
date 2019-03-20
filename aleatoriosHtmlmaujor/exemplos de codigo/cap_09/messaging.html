@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<script>
+if (window.addEventListener) {
+	window.addEventListener('message', receberMensagem, false);
+} else {
+	window.attachEvent("onmessage", receberMensagem);
+};
+function receberMensagem(e) {
+var mensagem;
+var containerMensagem = document.getElementById('recebe-mensagem');
+	if (e.origin == 'http://www.livrohtml5.com.br') {
+		mensagem =  'Recebida a seguinte mensagem: <br>';
+		mensagem += 'Texto: ' + e.data + '<br>';
+		mensagem += 'Origem: ' + e.origin;
+		containerMensagem.innerHTML = mensagem;
+	} else {
+		containerMensagem.innerHTML = 'Tentativa de envio de mensagem de uma origem não autorizada';
+	}
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 9 - Web Messaging</h1>
+	<p>Este texto, bem como o título acima pertencem a uma página HTML hospedada em http://maujor.com.</p>
+	<p>A seguir existe um páragrafo vazio pronto para receber a mensagem enviada pela página que contém o iframe e está hospedada em http://livrohtml5.com.br.</p>
+</header>
+<section>
+<p id="recebe-mensagem" style="color:#c30;"></p>
+</section>
+</div>
+</body>
+</html>

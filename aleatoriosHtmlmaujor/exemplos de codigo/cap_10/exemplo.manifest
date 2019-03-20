@@ -1,0 +1,13 @@
+CACHE MANIFEST
+#06/04/2011:v2
+
+CACHE:
+index.html
+offline.css
+
+NETWORK:
+../estilos/main.css 
+
+FALLBACK:
+../estilos/main.css offline.css
+

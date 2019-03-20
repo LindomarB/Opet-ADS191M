@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<style>
+</style>
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script>
+//<![CDATA[
+function init() {
+if (!Modernizr.webworkers) {alert('Lamento, seu navegador não suporta Web Workers')}	
+	var i,r,btnSemWorker,btnComWorker,campoResultado,btnLimpar;
+	btnSemWorker = document.getElementsByTagName('button')[0]; 
+	btnComWorker = document.getElementsByTagName('button')[1]; 
+	campoResultado = document.getElementsByTagName('input')[0]; 
+	btnLimpar = document.getElementsByTagName('button')[2]; 
+	campoResultado.style.color = 'red'; 
+// sem worker   
+function calcula() {
+	campoResultado.value = 'Calculando...';
+		setTimeout(function() {
+		r = 0
+		for(i=0; i<=1e+8; i++){r += i;} 
+			campoResultado.value = r;
+		},100)
+};	
+if(window.addEventListener) {
+	btnSemWorker.addEventListener('click', calcula, false);
+	btnLimpar.addEventListener('click', function() {
+		campoResultado.value = '';
+	}, false);
+} else {
+	btnSemWorker.attachEvent('onclick', calcula);
+	btnLimpar.attachEvent('onclick', function() {
+		campoResultado.value = '';
+	});
+}
+// com worker
+function calcWorker() {
+	campoResultado.value = 'Calculando...';
+	var worker = new Worker('calcula.js');
+		worker.onmessage = function (evt) {
+			campoResultado.value = evt.data;
+		};
+};
+if(window.addEventListener) {
+btnComWorker.addEventListener('click', calcWorker, false);
+} else {
+btnComWorker.attachEvent('onclick', calcWorker);
+};
+}
+window.onload = init;
+// ]]>
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 9</h1>
+	<h2>Web Workers - Exemplo 1</h2>
+</header>
+<section>
+<p>Este exemplo compara a realização< de uma tarefa de cálculo JavaScript com e sem o uso de WebWorkers.</p> 
+<p>Clique o botão para iniciar o cálculo e a seguir tente interagir com a página, por exemplo: selecionar textos na página.</p>
+<p>Notar que Sem Worker a seleção não é possível enquando o cálculo está em andamento e Com Worker não há bloqueio da interação.</p>
+<h3>Cálculo da soma dos números naturais de 0 a 100.000.000</h3>
+<p>Iniciar cálculo: <button type=button>Sem Worker</button> <button type=button>Com Worker</button></p>
+<p><label>Resultado:<br><input type=text></label></p> 
+<button type=button>Limpar</button>
+</section>
+<section>
+	<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script>
+function init() {
+if (!Modernizr.webworkers) {alert('Lamento, seu navegador não suporta Web Workers')}	
+	var i,r,btnSemWorker,btnComWorker,campoResultado,btnLimpar;
+	btnSemWorker = document.getElementsByTagName('button')[0]; 
+	btnComWorker = document.getElementsByTagName('button')[1]; 
+	campoResultado = document.getElementsByTagName('input')[0]; 
+	btnLimpar = document.getElementsByTagName('button')[2]; 
+// sem worker   
+function calcula() {
+	campoResultado.style.color ='red';
+	campoResultado.value = 'Calculando...';
+		setTimeout(function() {
+		r = 0
+		for(i=0; i&lt;=1e+8; i++){r += i;} 
+			campoResultado.value = r;
+		},100)
+};	
+if(window.addEventListener) {
+	btnSemWorker.addEventListener('click', calcula, false);
+	btnLimpar.addEventListener('click', function() {
+		campoResultado.value = '';
+	}, false);
+} else {
+	btnSemWorker.attachEvent('onclick', calcula);
+	btnLimpar.attachEvent('onclick', function() {
+		campoResultado.value = '';
+	});
+}
+// com worker
+function calcWorker() {
+	campoResultado.value = 'Calculando...';
+	var worker = new Worker('calcula.js');
+		worker.onmessage = function (evt) {
+			campoResultado.value = evt.data;
+		};
+};
+if(window.addEventListener) {
+btnComWorker.addEventListener('click', calcWorker, false);
+} else {
+btnComWorker.attachEvent('onclick', calcWorker);
+};
+}
+window.onload = init;
+&lt;/script>
+// xxxxxxxxxxxxx Tarefa do Worker - arquivo calcula.js xxxxxxxxxxxxx
+var r=0;
+for(i=0; i&lt;=1e+8; i++) {r += i;} 
+postMessage(r);	
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+<pre class="brush: html">
+&lt;section>	
+	&lt;p>Iniciar cálculo: &lt;button type=button>Sem Worker&lt;/button> &lt;button type=button>Com Worker&lt;/button>&lt;/p>
+	&lt;p>&lt;label>Resultado:&lt;br>&lt;input type=text>&lt;/label>&lt;/p> 
+	&lt;button type=button>Limpar&lt;/button>
+&lt;/section>
+</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c9-json.html">&laquo; anterior</a> | <a href="c9-webworkers-ex2.html">próxima &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

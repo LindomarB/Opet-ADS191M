@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<style>
+#mensagem {
+	font-size:16px;
+	color:#c30;
+	}
+</style>
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script>
+window.onload = function() {
+window.indexedDB = window.mozIndexedDB;
+var mensagem = document.getElementById('mensagem')
+var limpar = document.getElementById('limpar');
+	var request = window.indexedDB.open('Catalogo', 'Catalogo endereços de email e telefone');
+	request.onsuccess = function(event) {
+		mensagem.innerHTML = 'Banco de dados "Catalogo" criado/aberto com sucesso.';
+		limpar.style.display = 'block';
+	}
+	request.onerror = function(event) {
+		mensagem.innerHTML = 'Falha ao criar/abrir banco de dados.';
+		limpar.style.display = 'block';
+	}
+		limpar.onclick = function() {
+			mensagem.innerHTML = '';
+		limpar.style.display = 'none';
+		}
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 8</h1>
+	<h2>IndexedDb - open()</h2>
+</header>
+<section>
+<p id="mensagem"></p>
+<button type="button" id="limpar" style="display:none;">Remover mensagem</button>
+</section>
+<section>
+	<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script>
+window.onload = function() {
+window.indexedDB = window.mozIndexedDB;
+var mensagem = document.getElementById('mensagem')
+var limpar = document.getElementById('limpar');
+	var request = window.indexedDB.open('Catalogo', 'Catalogo endereços de email e telefone');
+	request.onsuccess = function(event) {
+		mensagem.innerHTML = 'Banco de dados "Catalogo" criado/aberto com sucesso.';
+		limpar.style.display = 'block';
+	}
+	request.onerror = function(event) {
+		mensagem.innerHTML = 'Falha ao criar/abrir banco de dados.';
+		limpar.style.display = 'block';
+	}
+		limpar.onclick = function() {
+			mensagem.innerHTML = '';
+		limpar.style.display = 'none';
+		}
+}
+&lt;/script>
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+&lt;section>	
+	&lt;p id="mensagem">&lt;/p>
+	&lt;button type="button" id="limpar" style="display:none;">Remover mensagem&lt;/button>
+&lt;/section>
+</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c8-evento-storage.html">&laquo; anterior</a> | <a href="../cap_09/c9-messaging.html">cap 09 &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

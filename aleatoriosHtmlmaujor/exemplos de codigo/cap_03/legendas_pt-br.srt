@@ -1,0 +1,14 @@
+0:00:01.120,0:00:03.520
+Texto 1 em português 
+
+0:00:03.720,0:00:07.440
+Texto 2 em português 
+
+0:00:07.640,0:00:12.720
+Texto 3 em português 
+
+0:00:12.920,0:00:16.480
+Texto 4 em português 
+
+00:00:16.680,00:00:21.480
+Texto 5 em português 

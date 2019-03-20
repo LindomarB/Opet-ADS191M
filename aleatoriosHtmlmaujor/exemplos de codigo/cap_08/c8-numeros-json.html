@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<style rel="stylesheet" type="text/css" midia="all">
+p {margin-bottom:15px;}
+input {width:50px;}
+</style>
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script>
+window.onload = function() {
+var campos = document.getElementsByTagName('input');
+var limpar = document.getElementById('limpar');
+	
+	sessionStorage.setItem('a', 4);	
+	sessionStorage.setItem('b', 3);	
+	a = sessionStorage.getItem('a');	
+	b = sessionStorage.getItem('b');	
+	campos[0].onclick = function() {
+		this.value = a+b;
+	}
+
+	var numeros = {
+		a: 4,
+		b: 3
+	}
+	sessionStorage.setItem('numeros', JSON.stringify(numeros));
+	JSON.parse(sessionStorage.getItem('numeros'));
+	campos[1].onclick = function() {
+		this.value = numeros.a + numeros.b;
+	}
+
+	limpar.onclick = function() {
+	campos[0].value = 'clique';
+	campos[1].value = 'clique';
+	}
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 8</h1>
+	<h2>Armazenar dados localmente, como objeto - Uso de JSON</h2>
+</header>
+<section>
+<p>Armazenar com sessionStorage simples (operação de concatenação):<br>
+4 + 3 = <input value="clique"></p>
+<p>Armazenar com sessionStorage e JSON (operação de adição):<br>
+4 + 3 = <input value="clique"></p>
+<button type="button" id="limpar">Limpar</button>
+</section>
+<section>
+	<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script>
+window.onload = function() {
+var campos = document.getElementsByTagName('input');
+// armazenar sem JSON	
+	sessionStorage.setItem('a', 4);	
+	sessionStorage.setItem('b', 3);	
+	a = sessionStorage.getItem('a');	
+	b = sessionStorage.getItem('b');	
+	campos[0].onclick = function() {
+		this.value = a+b;
+	}
+
+// armazenar com JSON	
+	var numeros = {
+		a: 4,
+		b: 3
+	}
+	sessionStorage.setItem('numeros', JSON.stringify(numeros));
+	JSON.parse(sessionStorage.getItem('numeros'));
+	campos[1].onclick = function() {
+		this.value = numeros.a + numeros.b;
+	}
+}
+&lt;/script>
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+&lt;section>	
+&lt;p>Armazenar com sessionStorage simples:&lt;br>
+4 + 3 = &lt;input value="clique">&lt;/p>
+&lt;p>Armazenar com sessionStorage e JSON:&lt;br>
+4 + 3 = &lt;input value="clique">&lt;/p>
+&lt;/section>
+</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c8-numeros.html">&laquo; anterior</a> | <a href="c8-evento-storage.html">próxima &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

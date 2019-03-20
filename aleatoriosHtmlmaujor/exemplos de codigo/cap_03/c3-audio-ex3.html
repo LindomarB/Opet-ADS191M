@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<style>
+#fundo-controles {
+	width:163px; 
+	height:43px;
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	background:url(fundo-controles.png) no-repeat;
+	}
+</style>
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script>
+function id(id) {
+	return document.getElementById(id)
+}
+function init() {	
+	var container= id('fundo-controles');
+	var ctr = id('som');
+	var play = id('play');
+	var pause = document.getElementById('pause');
+	var vmais = document.getElementById('vmais');
+	var vmenos = document.getElementById('vmenos');
+	
+	if (!Modernizr.audio) {
+		container.style.display = 'none';	
+		} else {	
+	play.addEventListener('click', function(){
+		ctr.play();
+		ctr.volume = 1;
+	}, false);
+
+	pause.addEventListener('click', function(){
+		ctr.pause();
+	}, false);
+
+	vmais.addEventListener('click', function(){
+		ctr.play();
+		ctr.volume += 0.1;
+	
+	}, false);
+
+	vmenos.addEventListener('click', function(){
+		ctr.play();
+		ctr.volume -= 0.1;
+	}, false);
+	};
+}
+window.onload = init;
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 3</h1>
+	<h2>Controles de som  com JavaScript e botões personalizados</h2>
+</header>
+
+<section>
+	<audio id="som">
+		<source src="som.ogg" type="audio/ogg">
+		<source src="som.mp3" type="audio/mpeg">
+		<source src="som.wav" type="audio/wave">
+		<p>Seu navegador não suporta o elemento audio da HTML5.<br>Faça <a href="som.zip">download de som.zip</a></p>
+	</audio>
+	<div id="fundo-controles">
+		<input type=image src="play.png" alt=Play id="play">
+		<input type=image src="pause.png" alt=Pause id="pause">
+		<input type=image src="vmais.png" alt=Volume(+) id="vmais">
+		<input type=image src="vmenos.png" alt=Volume(-) id="vmenos">
+	</div>
+</section>
+<section>
+	<h3>JavaScript</h3>
+		<pre class="brush: javascript">
+&lt;script type="text/javascript">
+function id(id) {
+	return document.getElementById(id)
+}
+function init() {	
+	var container = id('fundo-controles');
+	var ctr = id('som');
+	var play = id('play');
+	var pause = document.getElementById('pause');
+	var vmais = document.getElementById('vmais');
+	var vmenos = document.getElementById('vmenos');
+
+	if (!Modernizr.audio) {
+		container.style.display = 'none';	
+		} else {	
+	
+	play.addEventListener('click', function(){
+		ctr.play();
+		ctr.volume = 1;
+	}, false);
+
+	pause.addEventListener('click', function(){
+		ctr.pause();
+	}, false);
+
+	vmais.addEventListener('click', function(){
+		ctr.play();
+		ctr.volume += 0.1;
+	
+	}, false);
+
+	vmenos.addEventListener('click', function(){
+		ctr.play();
+		ctr.volume -= 0.1;
+	}, false);
+	};
+}
+window.onload = init;
+&lt;/script >		
+		</pre>
+</section>
+<section>
+	<h3>CSS</h3>
+		<pre class="brush: css">
+	&lt;style>
+	#fundo-controles {
+		width:163px; 
+		height:43px;
+		display:table-cell;
+		vertical-align:middle;
+		text-align:center;
+		background:url(fundo-controles.png) no-repeat;
+		}
+	&lt;/style>	
+		</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+	&lt;audio id="som">
+		&lt;source src="som.ogg" type="audio/ogg">
+		&lt;source src="som.mp3" type="audio/mpeg">
+		&lt;source src="som.wav" type="audio/wave">
+		&lt;p>Seu navegador não suporta o elemento audio da HTML5.&lt;br>Faça &lt;a href="som.zip">download de som.zip&lt;/a>&lt;/p>
+	&lt;/audio>
+	
+	&lt;div id="fundo-controles">
+		&lt;input type=image src="play.png" alt=Play id="play">
+		&lt;input type=image src="pause.png" alt=Pause id="pause">
+		&lt;input type=image src="vmais.png" alt=Volume(+) id="vmais">
+		&lt;input type=image src="vmenos.png" alt=Volume(-) id="vmenos">
+	&lt;/div>		
+	</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c3-audio-ex2.html">&laquo; anterior</a> | <a href="c3-video-ex1.html">próximo &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

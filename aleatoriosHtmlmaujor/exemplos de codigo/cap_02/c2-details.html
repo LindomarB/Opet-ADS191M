@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<style>
+summary {
+	text-decoration:underline;
+	color:red;
+	}
+summary:hover {
+	text-decoration:none;
+	cursor:pointer;
+	}
+dl {
+	border:1px solid #ccc;
+	padding:5px 10px;
+	width:400px;
+	background:#fafafa;
+	}
+</style>
+<!--[if IE]><script src="../scripts/excanvas.js"></script><![endif]-->
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+   /*!
+    * noSelect jQuery Plugin
+    * @link http://github.com/mathiasbynens/noSelect-jQuery-Plugin
+    * @author Mathias Bynens <http://mathiasbynens.be/>
+    */
+   (function(a){a.fn.noSelect=function(){function b(){return !1}return a(this).each(function(){this.onselectstart=this.ondragstart=b;a(this).mousedown(b).css({MozUserSelect:'none',WebkitUserSelect:'none',userSelect:'none'})})}})(jQuery);
+
+   $(function() {
+
+    // Execute the fallback only if there’s no native `details` support
+    if (!('open' in document.createElement('details'))) {
+
+     // Loop through all `details` elements
+     $('details').each(function() {
+      // Store a reference to the current `details` element in a variable
+      var $details = $(this),
+          // Store a reference to the `summary` element of the current `details` element (if any) in a variable
+          $detailsSummary = $('summary', $details),
+          // Do the same for the info within the `details` element
+          $detailsNotSummary = $details.children(':not(summary)'),
+          // This will be used later to look for direct child text nodes
+          $detailsNotSummaryContents = $details.contents(':not(summary)');
+
+      // If there is no `summary` in the current `details` element…
+      if (!$detailsSummary.length) {
+       // …create one with default text
+       $detailsSummary = $(document.createElement('summary')).text('Details').prependTo($details);
+      }
+
+      // Look for direct child text nodes
+      if ($detailsNotSummary.length !== $detailsNotSummaryContents.length) {
+       // Wrap child text nodes in a `span` element
+       $detailsNotSummaryContents.filter(function() {
+        // Only keep the node in the collection if it’s a text node containing more than only whitespace
+        return (this.nodeType === 3) && (/[^\t\n\r ]/.test(this.data));
+       }).wrap('<span>');
+       // There are now no direct child text nodes anymore — they’re wrapped in `span` elements
+       $detailsNotSummary = $details.children(':not(summary)');
+      }
+
+      // Hide content unless there’s an `open` attribute
+      if (typeof $details.attr('open') !== 'undefined') {
+       $details.addClass('open');
+       $detailsNotSummary.show();
+      } else {
+       $detailsNotSummary.hide();
+      }
+
+      // Set the `tabindex` attribute of the `summary` element to 0 to make it keyboard accessible
+      $detailsSummary.attr('tabindex', 0).click(function() {
+       // Focus on the `summary` element
+       $detailsSummary.focus();
+       // Toggle the `open` attribute of the `details` element
+       typeof $details.attr('open') !== 'undefined' ? $details.removeAttr('open') : $details.attr('open', 'open');
+       // Toggle the additional information in the `details` element
+       $detailsNotSummary.toggle(0);
+       $details.toggleClass('open');
+      }).keyup(function(event) {
+       if (13 === event.keyCode || 32 === event.keyCode) {
+        // Enter or Space is pressed — trigger the `click` event on the `summary` element
+        // Opera already seems to trigger the `click` event when Enter is pressed
+        if (!($.browser.opera && 13 === event.keyCode)) {
+         event.preventDefault();
+         $detailsSummary.click();
+        }
+       }
+      });
+     });
+
+    }
+   });
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 2</h1>
+	<h2>Elemento details e summary</h2>
+		<p>Click no texto a seguir</p>
+</header>
+<section>
+<details>
+	<summary>Livros do Maujor</summary>
+		<dl>
+			<dt>Construindo sites com CSS e (X)HTML</dd>
+				<dd>Ano: 2007</dd>
+				<dd>Páginas: 438</dd>
+			<dt>jQuery - A biblioteca do programador JavaScript</dd>
+				<dd>Ano: 2008</dd>
+				<dd>Páginas: 543</dd>
+			<dt>AJAX com jQuery - Requisições AJAX com a simplicidade de jQuery</dd>
+				<dd>Ano: 2009</dd>
+				<dd>Páginas: 327</dd>
+			<dt>JavaScript - Guia do programador</dd>
+				<dd>Ano: 2010</dd>
+				<dd>Páginas: 604</dd>
+		</dl>
+</details>
+</section>
+<section>
+	<h3>CSS</h3>
+		<pre class="brush:css">
+summary {
+	text-decoration:underline;
+	color:red;
+	}
+summary:hover {
+	text-decoration:none;
+	cursor:pointer;
+	}
+dl {
+	border:1px solid #ccc;
+	padding:5px 10px;
+	width:400px;
+	background:#fafafa;
+	}
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+&lt;details>
+	&lt;summary>Livros do Maujor&lt;/summary>
+		&lt;dl>
+			&lt;dt>Construindo sites com CSS e (X)HTML&lt;/dd>
+				&lt;dd>Ano: 2007&lt;/dd>
+				&lt;dd>Páginas: 438&lt;/dd>
+			&lt;dt>jQuery - A biblioteca do programador JavaScript&lt;/dd>
+				&lt;dd>Ano: 2008&lt;/dd>
+				&lt;dd>Páginas: 543&lt;/dd>
+			&lt;dt>AJAX com jQuery - Requisições AJAX com a simplicidade de jQuery&lt;/dd>
+				&lt;dd>Ano: 2009&lt;/dd>
+				&lt;dd>Páginas: 327&lt;/dd>
+			&lt;dt>JavaScript - Guia do programador&lt;/dd>
+				&lt;dd>Ano: 2010&lt;/dd>
+				&lt;dd>Páginas: 604&lt;/dd>
+		&lt;/dl>
+&lt;/details>
+</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c2-datalist.html">&laquo; anterior</a> | <a href="../cap_03/c3-audio-ex1.html">capítulo 3 &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

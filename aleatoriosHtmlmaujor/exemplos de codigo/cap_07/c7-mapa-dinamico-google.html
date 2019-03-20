@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<style>
+#mapa {
+	width:820px;
+	height:820px;
+	margin-top:20px;
+	display:none;
+	}
+</style>
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script>
+var infowindow = new google.maps.InfoWindow();
+function mostrarMapa() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(sucesso,erro);
+	} else {
+		alert("Este navegador não suporta a funcionalidade Geolocation");
+	}
+}
+function erro(err) {
+	switch (err.code) {
+		case 1 : 
+			var mensagemErro = "A permissão para obter a sua posição foi negada.";
+		break;
+		case 2 : 
+			var mensagemErro = "Não foi possível estabelecer uma conexão para obter a sua posição.";
+		break;
+		case 3 : 
+			var mensagemErro = "Tempo esgotado.";
+		break;
+		default:
+			var mensagemErro = "Não foi possível obter sua posição.";
+		}
+	var codigoErro = err.code;
+	var mensagem = "Ocoreu um erro na determinação da posição: <br>";
+	mensagem += "Código do erro: " + codigoErro + "<br>";
+	mensagem += "Mensagem: " + mensagemErro;
+	document.getElementById('msg').innerHTML = mensagem;
+}
+function sucesso(position) {
+	var mapa= document.getElementById("mapa");
+	mapa.style.display = "block";
+	var opcoes = {
+		zoom: 15,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById("mapa"), opcoes);
+	var latitude = position.coords.latitude;
+	var longitude = position.coords.longitude;
+	var local = new google.maps.LatLng(latitude,longitude);
+	contentString = "<br>Legal! Achei você usando a funcionalidade<br> Geolocation do W3C e o Google Maps.";
+	map.setCenter(local);
+	infowindow.setContent(contentString);
+	infowindow.setPosition(local);
+	infowindow.open(map);
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 7</h1>
+	<h2>Mostrar mapa dinâmico da posição do dispositivo de usuário</h2>
+</header>
+<section>
+	<p><input type=button value="Clique para mostrar sua posição no mapa" onClick="mostrarMapa()"></p>
+	<p id="msg" class="dest"></p>
+</section>
+<section>
+	<div id="mapa"></div>
+</section>
+<section>
+	<h3>CSS</h3>
+<pre class="brush: css">
+&lt;style>
+#mapa {
+	width:820px;
+	height:820px;
+	margin-top:20px;
+	display:none;
+	}
+&lt;/style>
+</pre>
+</section>
+
+<section>
+	<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script>
+var infowindow = new google.maps.InfoWindow();
+function mostrarMapa() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(sucesso,erro);
+	} else {
+		alert("Este navegador não suporta a funcionalidade Geolocation");
+	}
+}
+function erro(err) {
+	switch (err.code) {
+		case 1 : 
+			var mensagemErro = "A permissão para obter a sua posição foi negada.";
+		break;
+		case 2 : 
+			var mensagemErro = "Não foi possível estabelecer uma conexão para obter a sua posição.";
+		break;
+		case 3 : 
+			var mensagemErro = "Tempo esgotado.";
+		break;
+		default:
+			var mensagemErro = "Não foi possível obter sua posição.";
+		}
+	var codigoErro = err.code;
+	var mensagem = "Ocoreu um erro na determinação da posição: <br>";
+	mensagem += "Código do erro: " + codigoErro + "<br>";
+	mensagem += "Mensagem: " + mensagemErro;
+	document.getElementById('msg').innerHTML = mensagem;
+}
+function sucesso(position) {
+	var mapa= document.getElementById("mapa");
+	mapa.style.display = "block";
+	var opcoes = {
+		zoom: 15,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById("mapa"), opcoes);
+	var latitude = position.coords.latitude;
+	var longitude = position.coords.longitude;
+	var local = new google.maps.LatLng(latitude,longitude);
+	contentString = "<br>Legal! Achei você usando a funcionalidade<br> Geolocation do W3C e o Google Maps.";
+	map.setCenter(local);
+	infowindow.setContent(contentString);
+	infowindow.setPosition(local);
+	infowindow.open(map);
+}
+&lt;/script>
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+&lt;section>
+	&lt;p>&lt;input type=button value="Clique para mostrar sua posição no mapa" onClick="mostrarMapa()">&lt;/p>
+	&lt;p id="msg" class="dest">&lt;/p>
+&lt;/section>
+&lt;section>
+	&lt;div id="mapa">&lt;/div>
+&lt;/section>
+</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c7-mapa-estatico-google.html">&laquo; anterior</a> | <a href="../cap_08/c8-cookies-sessionstorage.html">cap8 &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

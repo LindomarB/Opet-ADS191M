@@ -1,0 +1,60 @@
+body {
+	font: 14px/1.2 Arial, Helvetica, sans-serif;
+	color:#333;
+	padding:0;
+	margin:10px;
+	background:#ccc url(bg-body.gif) 0 0;
+	}
+#tudo {
+	width:98%;
+	padding:0 1% 0 1%;
+	max-width:1100px;
+	min-width:740px;
+	margin:0 auto;
+	padding-bottom:15px;
+	background:#fff;
+	border:1px dotted #f00;
+	}
+article, aside, figure, footer, header, hgroup,
+menu, nav, section, video, audio { display: block; }
+video, audio {margin-bottom:10px;}
+h1 {
+	font-size:20px;
+	color:#f00;
+	text-align:center;
+	background:#f1f1f1;
+	border:1px solid #f00;
+	margin:10px 0 30px 0;
+	}
+h2 {
+	font-size:18px;
+	}
+h3 {
+	font-size:16px;
+	}
+p {margin:5px 0;}
+footer {
+	font-style:normal; 
+	margin:30px 0; 
+	border-top:1px dotted #f00;
+	padding:5px 0 1px 0;
+	}
+hr {
+	height:1px;
+	border:none;
+	background:#ddd;
+	margin-top:30px;
+	}
+.marcacao {
+	border: 1px solid #ccc;
+	background:#eee;
+	padding:5px 10px;
+	margin-bottom:25px;
+}
+code {color:#c0f;}
+.dest {color:#c30;}
+.bold {font-weight:bold;}
+@page {
+margin: 5%
+}
+ 

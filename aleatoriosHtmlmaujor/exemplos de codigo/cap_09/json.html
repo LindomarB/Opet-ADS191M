@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<style>
+body {
+	font:14px/20px sans-serif;
+	}
+p {
+	margin:0;
+	padding:5px 0;
+	border-bottom:1px dotted #ccc;
+	}
+p span {color:#900;}
+</style>
+<script>
+if (window.addEventListener) {
+	window.addEventListener('message', receberMensagem, false);
+} else {
+	window.attachEvent("onmessage", receberMensagem);
+};
+function receberMensagem(e) {
+var containerMensagem,msgRecebida,nomeRecebido,textoRecebido,para,span,conteudoSpan,conteudoPara;
+	containerMensagem = document.getElementById('recebe-mensagem');
+	if (e.origin == 'http://www.livrohtml5.com.br/') {
+		
+		msgRecebida = JSON.parse(e.data);
+		nomeRecebido = msgRecebida.nome;
+		textoRecebido = msgRecebida.texto;
+		horaRecebida = msgRecebida.hora;
+		para = document.createElement('p');
+		span = document.createElement('span');
+	
+		conteudoSpan = document.createTextNode(nomeRecebido);
+		conteudoPara = document.createTextNode(' ('+horaRecebida+') '+ textoRecebido); 
+	
+		span.appendChild(conteudoSpan);
+		
+		para.appendChild(span);
+		para.appendChild(conteudoPara);
+		containerMensagem.appendChild(para);	
+	} else { 
+		containerMensagem.innerHTML = 'Tentativa de envio de mensagem de uma origem não autorizada';
+	}
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<section>
+<div id="recebe-mensagem"></div>
+</section>
+</div>
+</body>
+</html>

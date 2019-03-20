@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<style>
+#mensagem {
+	font-size:16px;
+	color:#c30;
+	}
+</style>
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script>
+function msgEvento(e) {
+	if(!e) {e = window.event;}
+	var limpar = document.getElementById('limpar');
+	var containerMensagem = document.getElementById('mensagem');
+	
+	var mensagem =  'Disparado o evento: '+ e.type +'<br>'; 
+		mensagem += 'Nome do dado modificado: '+ e.key +'<br>';
+		mensagem += 'Valor antigo o dado: '+ e.oldValue +'<br>';
+		mensagem += 'Valor atual do dado modificado: '+ e.newValue +'<br>';
+		mensagem += 'Área de armazenamento: '+ e.storageArea +'<br>';
+		mensagem += 'URL das modificações: '+ e.url;
+	containerMensagem.innerHTML = mensagem;
+		limpar.onclick = function() {
+			containerMensagem.innerHTML = '';
+		}
+}
+function salvarDado(name) {
+	var valor = document.forms['dadoform'].dadovalue.value;
+	if (!valor)
+		alert('Entre um valor para o dado a armazenar.');
+	else {
+	localStorage.setItem(name, valor);
+	}
+}
+function apagarDado(name) {
+	localStorage.removeItem(name);
+}
+function clearDados() {
+	localStorage.clear();
+}
+if (window.addEventListener) {
+	window.addEventListener('storage', msgEvento, false);
+}else{
+window.attachEvent('onstorage', msgEvento)
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 8</h1>
+	<h2>Evento storage</h2>
+</header>
+<section>
+<form name="dadoform" action="#">
+<p><label>Escolha um valor para o dado "meuDado":</label><br> <input name="dadovalue"></p>
+</form>
+<p><a href="#" onClick="salvarDado('meuDado')">Armazenar - setItem()</a></p>
+<p><a href="#" onClick="apagarDado('meuDado')">Apagar dado - removeItem()</a></p>
+<p><a href="#" onClick="clearDados()">Apagar todos os dados - clear()</a></p>
+<p id="mensagem"></p>
+<button type="button" id="limpar">Limpar</button>
+<p><span class="dest">Instruções:</span> Abra esta página em duas janelas ou abas. Entre um valor qualquer para o dado a armazenar. Clique em "Armazenar - setItem(). Visualize a outra janela (aba) aberta e observe a mensagem inserida. Faça outras leituras clicando nos links para apagar dados. Após o clique as leituras devem ser feitas na outra janela (aba) aberta, pois o evento não dispara na janela (aba) onde o método foi aplicado e sim nas outras abertas.</p>
+</section>
+<section>
+	<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script>
+function msgEvento(e) {
+	if(!e) {e = window.event;}
+	var limpar = document.getElementById('limpar');
+	var containerMensagem = document.getElementById('mensagem');
+	
+	var mensagem =  'Disparado o evento: '+ e.type +'<br>'; 
+		mensagem += 'Nome do dado modificado: '+ e.key +'<br>';
+		mensagem += 'Valor antigo o dado: '+ e.oldValue +'<br>';
+		mensagem += 'Valor atual do dado modificado: '+ e.newValue +'<br>';
+		mensagem += 'Área de armazenamento: '+ e.storageArea +'<br>';
+		mensagem += 'URL das modificações: '+ e.url;
+	containerMensagem.innerHTML = mensagem;
+		limpar.onclick = function() {
+			containerMensagem.innerHTML = '';
+		}
+}
+function salvarDado(name) {
+	var valor = document.forms['dadoform'].dadovalue.value;
+	if (!valor)
+		alert('Entre um valor para o dado a armazenar.');
+	else {
+	localStorage.setItem(name, valor);
+	}
+}
+function apagarDado(name) {
+	localStorage.removeItem(name);
+}
+function clearDados() {
+	localStorage.clear();
+}
+if (window.addEventListener) {
+	window.addEventListener('storage', msgEvento, false);
+}else{
+window.attachEvent('onstorage', msgEvento)
+}
+&lt;/script>
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+&lt;section>	
+&lt;form name="dadoform" action="#">
+	&lt;p>&lt;label>Escolha um valor para o dado "meuDado":&lt;/label>&lt;br> &lt;input name="dadovalue">&lt;/p>
+&lt;/form>
+	&lt;p>&lt;a href="#" onClick="salvarDado('meuDado')">Armazenar - setItem()&lt;/a>&lt;/p>
+	&lt;p>&lt;a href="#" onClick="apagarDado('meuDado')">Apagar dado - removeItem()&lt;/a>&lt;/p>
+	&lt;p>&lt;a href="#" onClick="clearDados()">Apagar todos os dados - clear()&lt;/a>&lt;/p>
+	&lt;p id="mensagem">&lt;/p>
+	&lt;button type="button" id="limpar">Limpar&lt;/button>
+&lt;/section>
+</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c8-numeros-json.html">&laquo; anterior</a> | <a href="c8-indexedDB-ex1.html">próxima &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

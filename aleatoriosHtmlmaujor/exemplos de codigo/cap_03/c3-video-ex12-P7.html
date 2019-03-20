@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<style>
+#slider{vertical-align: middle;}
+</style>
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script>
+function init() {	 
+var video = document.getElementById('video');
+var slider = document.getElementById('slider');
+var vol = document.getElementById('vol');	
+	slider.addEventListener('change', function(){ 
+		video.volume = this.value;
+		vol.innerHTML = (this.value);	
+	}, false);
+
+	var btn = document.createElement('button');
+	btn.innerHTML = '&#x25BA;';
+	var secao = document.getElementsByTagName('section')[0];
+	secao.insertBefore(btn, slider); 
+
+	var btnFF = document.createElement('button');
+	btnFF.innerHTML = '&#x25BA;&#x25BA;';
+	secao.insertBefore(btnFF, slider); 
+
+	var btnRW = document.createElement('button');
+	btnRW.innerHTML = '&#x25C4;&#x25C4;';
+	secao.insertBefore(btnRW, slider); 
+	
+	var btnSM = document.createElement('button');
+	btnSM.innerHTML = '&#x25BA;&#x2590;';
+	secao.insertBefore(btnSM, slider); 
+
+	var video = document.getElementById('video');
+	video.removeAttribute('controls');
+	var playPause = function() { 
+		if (video.paused || video.ended){
+			video.play();
+			this.innerHTML = '&#x2588; &#x2588;';
+		}else{
+			video.pause()
+			this.innerHTML = '&#x25B6';
+		}
+	}
+btn.addEventListener('click', playPause, false);
+video.addEventListener('ended', function() {
+	btn.innerHTML = '&#x25B6';
+}, false);
+video.addEventListener('pause', function(){
+btn.innerHTML = '&#x25B6';
+}, false);
+video.addEventListener('play', function(){
+btn.innerHTML = '&#x2588; &#x2588;';
+}, false);
+
+btnFF.addEventListener('click', function(){
+	video.play();
+	video.playbackRate = 3;
+}, false);
+btnRW.addEventListener('click', function(){
+	video.play();
+	video.playbackRate = -20;
+}, false);
+
+btnSM.addEventListener('click', function(){
+	video.play();
+	video.playbackRate = 0.3;
+}, false);
+
+}
+window.onload = init;
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 3</h1>
+	<h2>Vídeo - Exemplo 12, Passo 7</h2>
+</header>
+<section>
+	<video poster="capa.jpg" id="video" width="400">
+		<source src="video.ogv" type="video/ogg">
+		<source src="video.mp4" type="video/mp4">
+		<source src="video.webm" type="video/webm">
+		<!-- Código (X)HTML para inserção de video com Flash -->
+		<p>Seu navegador não suporta o elemento video da HTML5.<br>Faça <a href="video.mp4">download do video</a></p>
+	</video>
+<input type="range" min="0" max="1" value="1" step="0.1" id="slider" />
+<span id="vol"></span>
+</section>
+<section>
+	<h3>JavaScript</h3>
+		<pre class="brush: javascript">
+&lt;script type="text/javascript">
+function init() {	 
+var video = document.getElementById('video');
+var slider = document.getElementById('slider');
+var vol = document.getElementById('vol');	
+	slider.addEventListener('change', function(){ 
+		video.volume = this.value;
+		vol.innerHTML = (this.value);	
+	}, false);
+
+	var btn = document.createElement('button');
+	btn.innerHTML = '&amp;#x25BA;';
+	var secao = document.getElementsByTagName('section')[0];
+	secao.insertBefore(btn, slider); 
+	
+	var btnFF = document.createElement('button');
+	btnFF.innerHTML = '&amp;#x25BA;&amp;#x25BA;';
+	secao.insertBefore(btnFF, slider); 
+
+	var btnRW = document.createElement('button');
+	btnRW.innerHTML = '&amp;#x25C4;&amp;#x25C4;';
+	secao.insertBefore(btnRW, slider); 
+	
+	var btnSM = document.createElement('button');
+	btnSM.innerHTML = '&amp;#x25BA;&amp;#x2590;';
+	secao.insertBefore(btnSM, slider); 
+	var video = document.getElementById('video');
+	video.removeAttribute('controls');
+	var playPause = function() { 
+		if (video.paused || video.ended){
+			video.play();
+			this.innerHTML = '&amp;#x2588; &amp;#x2588;';
+		}else{
+			video.pause()
+			this.innerHTML = '&amp;#x25B6';
+		}
+	}
+btn.addEventListener('click', playPause, false);
+video.addEventListener('ended', function() {
+	btn.innerHTML = '&amp;#x25B6';
+}, false);
+video.addEventListener('pause', function(){
+btn.innerHTML = '&amp;#x25B6';
+}, false);
+video.addEventListener('play', function(){
+btn.innerHTML = '&amp;#x2588; &amp;#x2588;';
+}, false);
+btnFF.addEventListener('click', function(){
+	video.play();
+	video.playbackRate = 3;
+}, false);
+btnRW.addEventListener('click', function(){
+	video.play();
+	video.playbackRate = -20;
+}, false);
+btnSM.addEventListener('click', function(){
+	video.play();
+	video.playbackRate = 0.3;
+}, false);
+}
+window.onload = init;		
+		</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+	&lt;video poster="capa.jpg" controls id="video" width="400">
+		&lt;source src="video.ogv" type="video/ogg">
+		&lt;source src="video.mp4" type="video/mp4">
+		&lt;source src="video.webm" type="video/webm">
+		&lt;!-- Código (X)HTML para inserção de video com Flash -->
+		&lt;p>Seu navegador não suporta o elemento video da HTML5.&lt;br>Faça &lt;a href="video.mp4">download do video&lt;/a>&lt;/p>
+	&lt;/video>		
+&lt;input type="range" min="0" max="1" value="1" step="0.1" id="slider" />
+&lt;span id="vol">1&lt;/span>
+	</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c3-video-ex12-P6.html">&laquo; anterior</a> | <a href="c3-video-ex12-P8.html">próximo &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

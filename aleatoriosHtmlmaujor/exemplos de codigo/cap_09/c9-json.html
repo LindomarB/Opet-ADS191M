@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<style>
+iframe {
+	width:600px;
+	height:200px;
+	}
+textarea {
+	width:350px;
+	height:100px;
+	}
+</style>
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script>
+window.onload = function() {
+	var objetoIframe,btnEnviar,horaMensagem,nomeUsuario,textoMensagem,dadosEnviar,stringEnviar;
+	objetoIframe = document.getElementsByTagName('iframe')[0]; 
+	btnEnviar = document.getElementsByTagName('button')[0];
+		btnEnviar.onclick = function() { 
+		var now = new Date();
+		var hour = now.getHours();
+		var minute = now.getMinutes();
+		var second = now.getSeconds();
+
+			horaMensagem = hour +':'+minute+':'+second+'h';
+			nomeUsuario = document.getElementsByTagName('input')[0].value;
+			textoMensagem = document.getElementsByTagName('textarea')[0].value;
+			if(textoMensagem == '' || nomeUsuario == '') {
+				alert('Os campos nome e mensagem devem ser preenchidos')
+			}else{
+				dadosEnviar = {
+				nome: nomeUsuario,
+				texto: textoMensagem,
+				hora: horaMensagem	
+			}
+			stringEnviar = JSON.stringify(dadosEnviar); 
+			objetoIframe.contentWindow.postMessage(stringEnviar, 'http://www.livrohtml5.com.br/');
+			}
+		}
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 9</h1>
+	<h2>Envio de objeto JSON com HTML5 Web Messaging</h2>
+</header>
+<section>
+<p><label>Seu nome:<br><input type=text></label></p> 
+<p><label>Mensagem:<br><textarea></textarea></label></p>
+<p><button type=button>Enviar mensagem</button></p>
+<iframe src="json.html"></iframe>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c9-messaging.html">&laquo; anterior</a> | <a href="c9-webworkers-ex1.html">próxima &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

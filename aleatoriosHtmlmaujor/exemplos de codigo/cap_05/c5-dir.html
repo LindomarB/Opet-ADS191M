@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<style>
+button {margin-right:10px;}
+</style>
+<script>
+window.onload = function() {
+var botao = document.getElementsByTagName('button')
+var pg = document.getElementsByTagName('body')
+
+	botao[0].onclick = function(){
+		pg[0].setAttribute('dir', 'ltr');
+	}
+	botao[1].onclick = function(){
+		pg[0].setAttribute('dir', 'rtl');
+	}
+	botao[2].onclick = function(){
+		pg[0].setAttribute('dir', 'auto');
+	}
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 5</h1>
+	<h2>Atributo dir</h2>
+</header>
+<section>
+	<h3>Demonstração</h3>
+		<p>Essa página integra o conjunto de páginas exemplo do livro HTML5 do Maujor.</p> 
+		<p>Foi criada para demonstar o atributo global <code>dir</code></p>
+		<p>Clique os botões a seguir para definir os atributos <code>ltr</code>, <code>rtl</code> e <code>auto</code> para o elemento <code>body</code> dessa página</p>
+		<button type="button">ltr</button>
+		<button type="button">rtl</button>
+		<button type="button">auto</button>
+</section>
+<section>
+	<h3>JavaScript</h3>
+		<pre class="brush: javascript">
+&lt;script>
+window.onload = function() {
+var botao = document.getElementsByTagName('button')
+var pg = document.getElementsByTagName('body')
+
+	botao[0].onclick = function(){
+		pg[0].setAttribute('dir', 'ltr');
+	}
+	botao[1].onclick = function(){
+		pg[0].setAttribute('dir', 'rtl');
+	}
+	botao[2].onclick = function(){
+		pg[0].setAttribute('dir', 'auto');
+	}
+}
+&lt;/script>
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+	&lt;h3>Demonstração&lt;/h3>
+		&lt;p>Essa página integra o conjunto de páginas exemplo do livro HTML5 do Maujor.&lt;/p> 
+		&lt;p>Foi criada para demonstar o atributo global &lt;code>dir&lt;/code>&lt;/p>
+		&lt;p>Clique os botões a seguir para definir os atributos &lt;code>ltr&lt;/code>, &lt;code>rtl&lt;/code><br>
+		e &lt;code>auto&lt;/code> para o elemento &lt;code>body&lt;/code> dessa página&lt;/p>
+		&lt;button type="button">ltr&lt;/button>
+		&lt;button type="button">rtl&lt;/button>
+		&lt;button type="button">auto&lt;/button>
+		</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c5-contenteditable.html">&laquo; anterior</a> | <a href="c5-autofocus.html">próxima &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

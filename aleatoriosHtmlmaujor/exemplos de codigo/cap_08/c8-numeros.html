@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<style rel="stylesheet" type="text/css" midia="all">
+p {margin-bottom:15px;}
+input {width:50px;}
+</style>
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script>
+window.onload = function() {
+var campos = document.getElementsByTagName('input');
+var limpar = document.getElementById('limpar');
+	limpar.onclick = function() {
+	campos[0].value = 'clique';
+	campos[1].value = 'clique';
+	}
+}
+sessionStorage.um = 4;
+sessionStorage.dois = 3;
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 8</h1>
+	<h2>O armazenamento local de dados, por padrão, é tipo string</h2>
+</header>
+<section>
+<p>Armazenamento sem tratamento (como string) - Operação de concatenação.<br>
+4 + 3 = <input onclick="this.value = sessionStorage.getItem('um') + sessionStorage.getItem('dois');" value="clique"></p>
+<p>Armazenamento com <code>parseInt()</code> (como número) - Operação de adição.<br>
+4 + 3 = <input onclick="this.value = parseInt(sessionStorage.getItem('um')) + parseInt(sessionStorage.getItem('dois'));" value="clique"></p>
+<button type="button" id="limpar">Limpar</button>
+</section>
+<section>
+	<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script>
+window.onload = function() {
+var campos = document.getElementsByTagName('input');
+var limpar = document.getElementById('limpar');
+	limpar.onclick = function() {
+	campos[0].value = 'clique';
+	campos[1].value = 'clique';
+	}
+}
+sessionStorage.um = 4
+sessionStorage.dois = 3
+&lt;/script>
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+&lt;section>	
+&lt;p>Armazenamento sem tratamento (como string) - Operação de concatenação.&lt;br>
+4 + 3 = &lt;input onclick="this.value = sessionStorage.getItem('um') + sessionStorage.getItem('dois');" value="clique">&lt;/p>
+&lt;p>Armazenamento com &lt;code>parseInt()&lt;/code> (como número) - Operação de adição.&lt;br>
+4 + 3 = &lt;input onclick="this.value = parseInt(sessionStorage.getItem('um')) + parseInt(sessionStorage.getItem('dois'));" value="clique">&lt;/p>
+&lt;button type="button" id="limpar">Limpar&lt;/button>
+&lt;/section>
+</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c8-localstorage.html">&laquo; anterior</a> | <a href="c8-numeros-json.html">próxima &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

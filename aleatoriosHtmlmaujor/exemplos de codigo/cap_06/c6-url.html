@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<style>
+.cssval {background:#ff0; }
+.cssval:valid {background:#0f0; }
+.cssval:invalid {background:#f00; color:#fff}
+</style>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 6</h1>
+	<h2>Valor url para o atributo type do elemento input</h2>
+</header>
+<section>
+  <form>
+   <p><label>URL: <input type=url name="url" class="cssval"></label></p>
+  </form>
+</section>
+<section>
+	<h3>CSS</h3>
+		<pre class="brush: css">
+&lt;style>
+	#url:valid {background:#0f0; }
+	#url:invalid {background:#f00; color:#fff}
+&lt;/style>
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+&lt;form>
+   &lt;p>&lt;label>URL: &lt;input type=url name="url" id="url">&lt;/label>&lt;/p>
+&lt;/form>
+</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c6-setCustomValidity.html">&laquo; anterior</a> | <a href="c6-email.html">próxima &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>

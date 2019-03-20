@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Livro HTML5 do Maujor</title>
+<link href="../estilos/main.css" rel="stylesheet" type="text/css">
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css">
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css">
+<style>
+canvas { font-size:10px; 
+	border:1px solid #ccc;
+	}
+</style>
+<!--[if IE]><script src="../scripts/excanvas.js"></script><![endif]-->
+<script src="../scripts/modernizr-1.6.min.js"></script>
+<script src="../scripts/shCore.js"></script>
+<script src="../scripts/shBrushJScript.js"></script>
+<script src="../scripts/shBrushCss.js"></script>
+<script src="../scripts/shBrushPhp.js"></script>
+<script src="../scripts/shBrushPlain.js"></script>
+<script src="../scripts/shBrushXml.js"></script>
+<script>SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script>	
+window.onload = function() {
+var canvas = document.getElementById('quadro');
+var ctx = canvas.getContext('2d'); 
+	ctx.font = '50px serif' ;
+	ctx.fillStyle = '#ccc';
+	ctx.fillText('Maujor', 200, 100)
+	
+	var formulario = document.getElementById('formulario');
+	var valor = document.getElementById('valor');
+	var limpar = document.getElementById('limpar');
+	var selecao = document.getElementById('va');
+	
+	ctx.fillStyle = '#006';
+	ctx.arc(200, 100, 3, 0, 2*Math.PI, true);
+	ctx.fill();
+	
+	function alinhar() {
+	ctx.font = '50px serif' ;
+	ctx.fillStyle = 'rgba(200, 0, 0, 0.6)';
+	ctx.textAlign = selecao.value;
+	ctx.fillText('Maujor', 200, 100)
+	
+	formulario.style.display = 'none';
+	limpar.style.display = 'block';
+	
+	var texto = document.createTextNode('Você escolheu o valor: ' + selecao.value);
+	valor.appendChild(texto);
+	}
+	
+	function limparCanvas() {
+	window.location.href=window.location.href;
+	}	
+	selecao.onchange = alinhar;
+	limpar.onclick = limparCanvas;
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<header>
+	<h1>Capítulo 4</h1>
+	<h2>Canvas - Exemplo 26: Textos e fontes.</h2>
+</header>
+<section>
+	<canvas id="quadro" width="400" height="200">
+		<p>Conteúdo alternativo para navegadores que não suportam canvas.</p>
+	</canvas>
+<p id="valor" class="dest"></p>
+<p id="limpar" style="display:none;"><button type="button">Limpar canvas</button></p>
+<form action="" method="get" id="formulario">
+<p><label for="va">Valor do atributo textAlign:</label>
+<select name="va" id="va">
+<option value="">escolha</option>
+<option value="start">start</option>
+<option value="end">end</option>
+<option value="left">left</option>
+<option value="right">right</option>
+<option value="center">center</option>
+</select></p>
+</form>
+</section>
+<section>
+	<h3>JavaScript</h3>
+		<pre class="brush: javascript">
+&lt;script>
+	// Texto referência em cinza 
+	ctx.font = '50px serif' ;
+	ctx.fillStyle = '#ccc';
+	ctx.fillText('Maujor', 200, 100)
+	// Ponto referência em azul 
+	ctx.fillStyle = '#006';
+	ctx.arc(200, 100, 3, 0, 2*Math.PI, true);
+	ctx.fill();
+	// Texto a alinhar em vermelho
+	ctx.font = '50px serif' ;
+	ctx.fillStyle = 'rgba(200, 0, 0, 0.6)';
+	ctx.textAlign = escolha;
+	ctx.fillText('Maujor', 200, 100)
+&lt;/script>
+</pre>
+</section>
+<section>
+	<h3>CSS</h3>
+		<pre class="brush:css">
+	canvas {border:1px solid #ccc;}
+</pre>
+</section>
+<section>
+	<h3>HTML</h3>
+		<pre class="brush: html">
+	&lt;canvas id="quadro" width="400" height="200">
+		&lt;p>Conteúdo alternativo para navegadores que não suportam canvas.&lt;/p>
+	&lt;/canvas>
+</pre>
+</section>
+<footer>
+<nav class="nav-arq" id="referencia">Arquivos exemplo: <a href="c4-canvas-ex25.html">&laquo; anterior</a> | <a href="c4-canvas-ex27.html">próximo &raquo;</a></nav>
+</footer>
+</div>
+</body>
+</html>
