@@ -1,0 +1,42 @@
+Descreva o que é um bit.
+Bit digito binario, a menor unidade de informação que pode ser armazenada ou transmitida.
+Geralmente usada em computação. Pode assumir somente 2 valores, como 0 ou 1. 
+
+Descreva o que é um byte.
+Byte são multiplos bits, hoje com o tamanho de 8 bits, tambem chamados de octetos.
+Ex: decimal 50 é em binario 00110010
+
+Descreva as demais unidades de medidas para armazenamento.
+Em alguns exemplos:
+1 kilobit (Kb) 1024 bytes
+1 megabit (Mb) 1024 kilobytes
+1 gigabit (Gb) 1024 megabytes
+1 terabyte (TB ou Tbytes) = 1024 gigabytes
+1 petabyte (PB ou Pbytes) = 1024 terabytes
+1 exabyte (EB ou Ebytes) = 1024 petabytes
+1 zettabyte (ZB ou Zbytes) = 1024 exabytes
+1 yottabyte (YB ou Ybytes) = 1024 zettabytes
+
+O que é nible? word? double word?
+- Um Nibble  é o termo usado em computação para representar a metade de 8 bits. 
+Assim 4 bits são equivalentes a 1 nibble.
+- Um Word são 16 bits, um conjunto de 2 bytes
+- Um Dword são 32 bits, 2 words, um conjunto de 4 bytes
+
+O que é uma tabela ASCII?
+O ASCII é um código numérico que representa os caracteres, usando uma escala 
+decimal de 0 a 127. Esses números decimais são então convertidos pelo computador 
+para binários e ele processa o comando. Sendo assim, cada uma das letras que você 
+digitar vai corresponder a um desses códigos.
+
+Monte uma frase utilizando codigos ASCII(desconsiderar maiuscula e acentos)
+
+ola mundo !
+111 108 97 32 109 117 110 100 111 32 33
+
+OLA MUNDO !
+79 76 65 32 77 85 78 68 79 32 33 
+
+
+
+ 
