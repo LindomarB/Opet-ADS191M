@@ -22,3 +22,7 @@ C)Estária eu fazendo perguntas demais?
 D)Alguma outra pessoa poderia me prestar informações adicionais?
 
 E)Deveria eu lhe perguntar algo mais?
+
+
+
+lindomar .___> adicionando esse comite
