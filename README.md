@@ -3,6 +3,7 @@ arquivos dos trabalhos solicitados pelos professores do curso de analise e desen
 Concepção
 Perguntas iniciais:
 As perguntas iniciais a seguir permitem adquirir um melhor entendimento do problema e que o cliente expresse as suas percepções sobre uma solução:
+
 A)Quais problemas está solução irá tratar?
 
 B)Qual é o ambiente de negócios onde a solução será usada?
@@ -11,6 +12,7 @@ C)Restrições ou problema de desempenho afetam a maneira como a solução será
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 O conjunto final de perguntas concentra-se na eficácia da comunicação em si
+
 A)Você é a pessoa correta para responder está pergunta?
 
 B)Minhas perguntas são relevantes para o problema?
